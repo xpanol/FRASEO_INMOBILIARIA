@@ -277,7 +277,7 @@
 
 <div id="stickyHeader">
     <img id="companyLogo" src="" alt="logo">
-    <h1 id="companyName">FRASAL KARAOKE</h1>
+    <h1 id="companyName">FRASEO INMOBILIARIA | REAL ESTATE</h1>
     <div id="buttonsContainer">
         <button onclick="startSequence('all')" class="main-btn">PLAY ALL</button>
         <button onclick="startSequence('es')" class="main-btn">SPANISH</button>
@@ -330,7 +330,7 @@
 </div>
 
 <div id="modalREPORT" class="modal">
-    <div id="reportTitleName" style="font-family:var(--head-font); font-size:24px; color:var(--brand-border); margin-bottom:10px; text-transform:uppercase; letter-spacing:3px;">FRASAL KARAOKE - PERFORMANCE REPORT</div>
+    <div id="reportTitleName" style="font-family:var(--head-font); font-size:24px; color:var(--brand-border); margin-bottom:10px; text-transform:uppercase; letter-spacing:3px;">FRASEO INMOBILIARIA | REAL ESTATE - PERFORMANCE REPORT</div>
     <div style="font-size:12px; color:#666; margin-bottom:20px; font-family:monospace;">Generated locally by Native Intelligence System</div>
     
     <div class="report-grid">
@@ -566,7 +566,7 @@ function resetPlayers() {
 
 function updateBranding() {
     const root = document.documentElement;
-    const compName = $('inCompName').value || "FRASAL KARAOKE";
+    const compName = $('inCompName').value || "FRASEO INMOBILIARIA | REAL ESTATE";
     
     $('companyName').textContent = compName;
     $('reportTitleName').textContent = compName.toUpperCase() + " - PERFORMANCE REPORT";
@@ -738,7 +738,7 @@ function exportReportToPDF() {
         if(item.score >= 80) good++; else if(item.score >= 50) mid++; else low++;
     });
     const globalAvg = Math.round(totalScoreSum / sessionHistoryLog.length);
-    const companyBrandingName = $('inCompName').value || "FRASAL KARAOKE";
+    const companyBrandingName = $('inCompName').value || "FRASEO INMOBILIARIA | REAL ESTATE";
 
     doc.setFillColor(0, 0, 0); doc.rect(0, 0, 210, 40, 'F');
     doc.setTextColor(255, 255, 255); doc.setFont("Helvetica", "bold"); doc.setFontSize(22); doc.text(companyBrandingName, 15, 18);
