@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;700;900&family=Montserrat:wght@300;400;700;800&family=Bebas+Neue&family=Syncopate:wght@400;700;&family=Ubuntu:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;700;900&family=Montserrat:wght@300;400;700;800&family=Bebas+Neue&family=Syncopate:wght@400;700&family=Ubuntu:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-bg: #000000;
@@ -299,7 +299,7 @@
     
     <div class="b-section">
         <h3>1. Identity & Logo</h3>
-        <div class="b-row"><label>Company Name</label><input type="text" id="inCompName" value="FRASAL KARAOKE" oninput="updateBranding()"></div>
+        <div class="b-row"><label>Company Name</label><input type="text" id="inCompName" value="FRASEO INMOBILIARIA | REAL ESTATE" oninput="updateBranding()"></div>
         <div class="b-row"><label>Logo URL</label><input type="text" id="inLogoUrl" placeholder="https://..." oninput="updateBranding()"></div>
         <div class="b-row"><label>Logo Scale (px)</label><input type="range" id="rgLogoScale" min="20" max="600" value="100" oninput="updateBranding()"></div>
         <div class="b-row"><label>Logo V-Offset</label><input type="range" id="rgLogoMargin" min="-200" max="400" value="10" oninput="updateBranding()"></div>
@@ -364,7 +364,7 @@
 
 <div id="stickyHeader">
     <img id="companyLogo" src="" alt="logo">
-    <h1 id="companyName">FRASAL KARAOKE</h1>
+    <h1 id="companyName">FRASEO INMOBILIARIA | REAL ESTATE</h1>
     <div id="buttonsContainer">
         <button onclick="startSequence('all')" class="main-btn">PLAY ALL</button>
         <button onclick="startSequence('es')" class="main-btn">SPANISH</button>
@@ -414,7 +414,7 @@
 </div>
 
 <div id="modalREPORT" class="modal">
-    <div id="reportTitleName" style="font-family:var(--head-font); font-size:24px; color:var(--brand-border); margin-bottom:10px; text-transform:uppercase; letter-spacing:3px;">FRASAL KARAOKE - PERFORMANCE REPORT</div>
+    <div id="reportTitleName" style="font-family:var(--head-font); font-size:24px; color:var(--brand-border); margin-bottom:10px; text-transform:uppercase; letter-spacing:3px;">FRASEO INMOBILIARIA | REAL ESTATE - PERFORMANCE REPORT</div>
     <div style="font-size:12px; color:#666; margin-bottom:20px; font-family:monospace;">Generated locally by Native Intelligence System</div>
     
     <div class="report-grid">
@@ -464,8 +464,8 @@
 
 <script>
 const $ = id => document.getElementById(id);
-const BASE_URL = 'https://raw.githubusercontent.com/xpanol/PLAYERS/main/';
-const TRACK_COUNT = 30;
+const BASE_URL = 'https://raw.githubusercontent.com/xpanol/PLAYERS_INMOBILIARIA/main/';
+const TRACK_COUNT = 10;
 let playerControls = [], curIdx = 0, isSeq = false;
 const mainAudio = new Audio();
 
@@ -663,7 +663,7 @@ function resetPlayers() {
 
 function updateBranding() {
     const root = document.documentElement;
-    const compName = $('inCompName').value || "FRASAL KARAOKE";
+    const compName = $('inCompName').value || "FRASEO INMOBILIARIA | REAL ESTATE";
     
     $('companyName').textContent = compName;
     $('reportTitleName').textContent = compName.toUpperCase() + " - PERFORMANCE REPORT";
@@ -883,7 +883,7 @@ function exportReportToPDF() {
         if(item.score >= 80) good++; else if(item.score >= 50) mid++; else low++;
     });
     const globalAvg = Math.round(totalScoreSum / sessionHistoryLog.length);
-    const companyBrandingName = $('inCompName').value || "FRASAL KARAOKE";
+    const companyBrandingName = $('inCompName').value || "FRASEO INMOBILIARIA | REAL ESTATE";
 
     doc.setFillColor(0, 0, 0);
     doc.rect(0, 0, 210, 40, 'F');
@@ -1103,7 +1103,7 @@ $('stopBtn').onclick = () => { isSeq = false; mainAudio.pause(); if(shaInterval)
 
 async function init() {
     try {
-        const tagsResponse = await fetch('https://raw.githubusercontent.com/xpanol/PLAYERS/refs/heads/main/data/marketing/tags.json');
+        const tagsResponse = await fetch('https://raw.githubusercontent.com/xpanol/PLAYERS_INMOBILIARIA/refs/heads/main/data/inmobiliaria/tags.json');
         if (tagsResponse.ok) {
             const externalTags = await tagsResponse.json();
             TRACK_TAGS = externalTags; 
