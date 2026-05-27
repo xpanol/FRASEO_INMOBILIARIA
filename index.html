@@ -6,7 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;700;900&family=Montserrat:wght@300;400;700;800&family=Bebas+Neue&family=Syncopate:wght@400;700&family=Ubuntu:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;700;900&family=Montserrat:wght@300;400;700;800&family=Bebas+Neue&family=Syncopate:wght@400;700;&family=Ubuntu:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-bg: #000000;
@@ -135,94 +135,13 @@
         .player-done .karaoke-line { color: var(--color-done) !important; opacity: 0.8; }
         .player-done .karaoke-line span { color: inherit !important; }
 
-        #fraseoGlossaryContainer {
-            max-width: 900px;
-            margin: 0 auto 100px auto;
-            padding: 20px;
-            position: relative;
-            z-index: 10;
-        }
-        .glossary-title {
-            font-family: var(--head-font);
-            font-size: 28px;
-            color: var(--brand-border);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-            border-bottom: 2px solid var(--brand-border);
-            padding-bottom: 10px;
-        }
-        .glossary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .glossary-card {
-            background: #0d0d0d;
-            border: 1px solid #222;
-            border-radius: var(--card-radius);
-            padding: 20px;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .glossary-card:hover {
-            border-color: var(--brand-border);
-            transform: translateY(-2px);
-        }
-        .glossary-cat {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888;
-            margin-bottom: 8px;
-        }
-        .glossary-terms {
-            margin-bottom: 12px;
-        }
-        .glossary-es {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--color-es);
-            margin-bottom: 2px;
-        }
-        .glossary-en {
-            font-size: 16px;
-            font-style: italic;
-            color: var(--color-en);
-        }
-        .glossary-desc {
-            font-size: 13px;
-            line-height: 1.5;
-            color: #ccc;
-            margin-bottom: 12px;
-            border-top: 1px solid #1a1a1a;
-            padding-top: 8px;
-        }
-        .glossary-meta {
-            font-size: 11px;
-            color: #666;
-            line-height: 1.4;
-            background: #050505;
-            padding: 8px;
-            border-radius: 6px;
-        }
-
         .modal { 
-            display:none;
-            position:fixed; inset:0; background:var(--brand-bg); 
+            display:none; position:fixed; inset:0; background:var(--brand-bg); 
             justify-content:center; align-items:center; flex-direction:column; z-index:5000; 
             overflow-y: auto; padding: 40px 0;
         }
         
-        .reto-layout-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
+        .reto-layout-container { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 900px; margin: 0 auto; text-align: center; }
 
         #shaText, #retoText { font-family: var(--main-font); color: var(--modal-text-color); }
         #shaTimer { font-size: 150px; font-weight: 900; color: var(--modal-text-color); margin: 10px 0; }
@@ -230,31 +149,13 @@
         #speechStatus { font-size: 12px; color: #888; margin-top: 5px; font-family: monospace; text-align: center; }
         
         .retro-mic-outer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #222 30%, #050505 90%);
-            border: 3px solid #333;
-            margin: 25px auto;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-            transition: border-color 0.3s;
+            display: flex; align-items: center; justify-content: center; width: 130px; height: 130px; border-radius: 50%;
+            background: radial-gradient(circle, #222 30%, #050505 90%); border: 3px solid #333; margin: 25px auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.7); transition: border-color 0.3s;
         }
         .retro-mic-btn {
-            background: var(--brand-border);
-            color: #000000;
-            border: none;
-            width: 95px;
-            height: 95px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5), inset 0 2px 5px rgba(255,255,255,0.4);
+            background: var(--brand-border); color: #000000; border: none; width: 95px; height: 95px; border-radius: 50%; cursor: pointer; font-size: 45px;
+            display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5), inset 0 2px 5px rgba(255,255,255,0.4);
             transition: transform 0.1s, background-color 0.2s, box-shadow 0.2s;
         }
         .retro-mic-btn:active { transform: scale(0.96); }
@@ -267,14 +168,7 @@
             100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); } 
         }
 
-        .status-dot {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-            vertical-align: middle;
-        }
+        .status-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
         .dot-green { background-color: #4CAF50; box-shadow: 0 0 10px #4CAF50; }
         .dot-yellow { background-color: #F8AC10; box-shadow: 0 0 10px #F8AC10; }
         .dot-red { background-color: #f03246; box-shadow: 0 0 10px #f03246; }
@@ -344,6 +238,7 @@
                 <option value="'Roboto Mono', monospace">Roboto Mono</option>
             </select>
         </div>
+   
         <div class="b-row"><label>Body Text Color</label><input type="color" id="cpMainText" value="#ffffff" oninput="updateBranding()"></div>
         <div class="b-row"><label>Body Text Size</label><input type="range" id="rgMainSize" min="8" max="60" value="16" oninput="updateBranding()"></div>
         <div class="b-row"><label>Karaoke ES Color</label><input type="color" id="cpEsColor" value="#F8AC10" oninput="updateBranding()"></div>
@@ -381,7 +276,6 @@
 </div>
 
 <div id="players"></div>
-
 
 <div id="modalRETO" class="modal">
     <div class="reto-layout-container">
@@ -533,7 +427,6 @@ function stopListeningState() {
 function calculateAccuracy(heardText) {
     const currentTrack = playerControls[curIdx];
     lastCleanRawText = heardText;
-    
     const cleanStr = str => {
         if (!str) return "";
         return str.toLowerCase()
@@ -563,7 +456,7 @@ function calculateAccuracy(heardText) {
     const getLevenshteinDistance = (a, b) => {
         const matrix = [];
         for (let i = 0; i <= b.length; i++) matrix[i] = [i];
-        for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+        for (let j = 1; j <= a.length; j++) matrix[0][j] = j;
         for (let i = 1; i <= b.length; i++) {
             for (let j = 1; j <= a.length; j++) {
                 if (b.charAt(i - 1) === a.charAt(j - 1)) matrix[i][j] = matrix[i - 1][j - 1];
@@ -581,7 +474,6 @@ function calculateAccuracy(heardText) {
     $('accuracyText').textContent = lastEvaluatedScore + '%';
     
     updateIndicatorDot(lastEvaluatedScore);
-
     const originalWords = currentTrack.text.split(/\s+/);
     const heardWordsClean = s2.split(/\s+/);
     
@@ -715,20 +607,20 @@ async function addPlayer(aUrl, jUrl, type) {
         const line = document.createElement('div'); line.className = 'karaoke-line';
         const rBtn = document.createElement('button'); rBtn.className = 'main-btn';
         rBtn.textContent = 'PRO RETO'; rBtn.style.display = "none"; rBtn.style.marginTop = "15px";
+        
         data.forEach(l => {
             l.text.split(' ').forEach((w, j) => {
                 const s = document.createElement('span'); s.textContent = w + ' ';
                 const sT = l.start.split(':').reduce((a,t)=>60*a+ +t,0); const eT = l.end.split(':').reduce((a,t)=>60*a+ +t,0);
                 const wD = (eT - sT) / l.text.split(' ').length;
-        
                 s.dataset.start = (sT + j*wD).toFixed(2); s.dataset.end = (sT + (j+1)*wD).toFixed(2);
                 line.appendChild(s);
             });
         });
+
         const currentTracksCount = playerControls.length;
         const currentPairId = Math.floor(currentTracksCount / 2) + 1;
         const currentTag = TRACK_TAGS[currentPairId] || "";
-        
         const infoContainer = document.createElement('div');
         infoContainer.style.marginTop = '12px';
         infoContainer.style.display = 'flex';
@@ -795,7 +687,6 @@ function openReto(p) {
 function closeReto() { 
     if(lastEvaluatedHtml !== "") {
         const currentTrack = playerControls[curIdx];
-        
         let audioBlob = null;
         if (audioChunks && audioChunks.length > 0) {
             const mimeType = getSupportedMimeType() || mediaRecorder.mimeType || 'audio/wav';
@@ -835,7 +726,6 @@ function openReport() {
         let totalScoreSum = 0, good = 0, mid = 0, low = 0, rowsHtml = "";
         sessionHistoryLog.forEach(item => {
             totalScoreSum += item.score;
-            
             let dotClass = "dot-red";
             let scoreColor = "#f03246";
             
@@ -897,19 +787,21 @@ function exportReportToPDF() {
 
     doc.setFillColor(255, 255, 255);
     doc.rect(15, 50, 55, 25, 'FD'); 
-    doc.setFont("Helvetica", "bold"); doc.setFontSize(8); doc.setTextColor(0, 0, 0); doc.text("GLOBAL ACCURACY", 20, 56);
+    doc.setFont("Helvetica", "bold"); doc.setFontSize(8); doc.setTextColor(0, 0, 0);
+    doc.text("GLOBAL ACCURACY", 20, 56);
     doc.setFont("Helvetica", "bold"); doc.setFontSize(18); 
     doc.setTextColor(27, 94, 32); doc.text(`${globalAvg}%`, 20, 68);
 
     doc.setFillColor(255, 255, 255);
     doc.rect(78, 50, 55, 25, 'FD'); 
     doc.setFont("Helvetica", "bold"); doc.setFontSize(8); doc.setTextColor(0, 0, 0); doc.text("TOTAL RETO RUNS", 83, 56);
-    doc.setFont("Helvetica", "bold"); doc.setFontSize(20); doc.setTextColor(0, 0, 0); 
-    doc.text(`${sessionHistoryLog.length}`, 83, 68);
+    doc.setFont("Helvetica", "bold"); doc.setFontSize(20);
+    doc.setTextColor(0, 0, 0); doc.text(`${sessionHistoryLog.length}`, 83, 68);
 
     doc.setFillColor(255, 255, 255);
     doc.rect(140, 50, 55, 25, 'FD'); 
-    doc.setFont("Helvetica", "bold"); doc.setFontSize(8); doc.setTextColor(0, 0, 0); doc.text("PERFORMANCE BREAKDOWN", 144, 56);
+    doc.setFont("Helvetica", "bold"); doc.setFontSize(8); doc.setTextColor(0, 0, 0);
+    doc.text("PERFORMANCE BREAKDOWN", 144, 56);
     doc.setFont("Helvetica", "bold"); doc.setFontSize(8.5); doc.setTextColor(0, 0, 0); 
     
     doc.setFillColor(46, 125, 50); doc.rect(144, 59.5, 2, 2, 'F');
@@ -917,11 +809,11 @@ function exportReportToPDF() {
     
     doc.setFillColor(216, 131, 0); doc.rect(144, 64.5, 2, 2, 'F');
     doc.text(`Mid (50-79%): ${mid}`, 148, 67);
-    
     doc.setFillColor(198, 40, 40); doc.rect(144, 69.5, 2, 2, 'F');
     doc.text(`Low (<50%): ${low}`, 148, 72);
 
-    doc.setFont("Helvetica", "bold"); doc.setFontSize(12); doc.setTextColor(0, 0, 0); doc.text("Visual Comparison Analytics Log", 15, 87);
+    doc.setFont("Helvetica", "bold"); doc.setFontSize(12); doc.setTextColor(0, 0, 0);
+    doc.text("Visual Comparison Analytics Log", 15, 87);
 
     const tableRows = [];
     sessionHistoryLog.forEach(item => {
@@ -944,13 +836,11 @@ function exportReportToPDF() {
             }
         }
     });
-
     doc.save(`Session_Performance_Report_${Date.now()}.pdf`);
 }
 
 async function downloadAllRecordingsZIP() {
     const validRecordings = sessionHistoryLog.filter(item => item.audioBlob !== null);
-
     if (validRecordings.length === 0) {
         alert("Brak nagrań w tej sesji! Uruchom tryb PRO RETO, nagraj głos, a następnie pobierz plik.");
         return;
@@ -959,7 +849,6 @@ async function downloadAllRecordingsZIP() {
     const changeBtn = $('downloadZipBtn');
     changeBtn.textContent = "MERGING AUDIO...";
     changeBtn.disabled = true;
-
     try {
         const AudioContext = window.AudioContext || window.webkitAudioContext;
         const audioCtx = new AudioContext();
@@ -985,7 +874,6 @@ async function downloadAllRecordingsZIP() {
         const totalLength = audioBuffers.reduce((acc, buf) => acc + buf.length, 0);
 
         const mergedBuffer = audioCtx.createBuffer(numChannels, totalLength, sampleRate);
-        
         for (let channel = 0; channel < numChannels; channel++) {
             const mergedData = mergedBuffer.getChannelData(channel);
             let offset = 0;
@@ -998,14 +886,12 @@ async function downloadAllRecordingsZIP() {
         }
 
         const wavBlob = bufferToWav(mergedBuffer);
-
         const link = document.createElement("a");
         link.href = URL.createObjectURL(wavBlob);
         link.download = `Fraseo_Session_Merged_${Date.now()}.wav`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-
     } catch (err) {
         console.error("Błąd podczas łączenia audio:", err);
         alert("Wystąpił błąd podczas scalania plików audio.");
@@ -1024,6 +910,9 @@ function bufferToWav(buffer) {
           sampleRate = buffer.sampleRate;
     let i, sample, offset = 0, pos = 0;
 
+    function setUint16(data) { view.setUint16(pos, data, true); pos += 2; }
+    function setUint32(data) { view.setUint32(pos, data, true); pos += 4; }
+
     setUint32(0x46464952); 
     setUint32(length - 8); 
     setUint32(0x45564157); 
@@ -1036,7 +925,7 @@ function bufferToWav(buffer) {
     setUint16(numOfChan * 2);              
     setUint16(16);                         
     setUint32(0x61746164); 
-    setUint32(length - pos - 4); 
+    setUint32(length - pos - 4);
 
     for(i = 0; i < buffer.numberOfChannels; i++) {
         channels.push(buffer.getChannelData(i));
@@ -1044,7 +933,7 @@ function bufferToWav(buffer) {
 
     while(pos < length) {
         for(i = 0; i < numOfChan; i++) {
-            sample = Math.max(-1, Math.min(1, channels[i][offset])); 
+            sample = Math.max(-1, Math.min(1, channels[i][offset]));
             sample = sample < 0 ? sample * 0x8000 : sample * 0x7FFF;
             view.setInt16(pos, sample, true);
             pos += 2;
@@ -1053,49 +942,6 @@ function bufferToWav(buffer) {
     }
 
     return new Blob([bufferArr], { type: "audio/wav" });
-
-    function setUint16(data) { view.setUint16(pos, data, true); pos += 2; }
-    function setUint32(data) { view.setUint32(pos, data, true); pos += 4; }
-}
-
-async function loadFraseoDictionary() {
-    try {
-        const response = await fetch('fraseo_marketing_dictionary.json');
-        const data = await response.json();
-        
-        const grid = $('glossaryGrid');
-        grid.innerHTML = ''; 
-
-        data.dictionary.forEach(item => {
-            console.log(`FRASEO Boost [${item.id}]: ${item.term_es} -> ${item.term_en}`);
-            
-            const card = document.createElement('div');
-            card.className = 'glossary-card';
-            
-            const synsEs = item.synonyms_es ? item.synonyms_es.join(', ') : '';
-            const synsEn = item.synonyms_en ? item.synonyms_en.join(', ') : '';
-
-            card.innerHTML = `
-                <div class="glossary-cat">${item.category} (Track #${item.sentence_match_id})</div>
-                <div class="glossary-terms">
-                    <div class="glossary-es">${item.term_es}</div>
-                    <div class="glossary-en">${item.term_en}</div>
-                </div>
-                <div class="glossary-desc">
-                    <strong>ES:</strong> ${item.concept_es}<br><br>
-                    <strong>EN:</strong> ${item.concept_en}
-                </div>
-                <div class="glossary-meta">
-                    <strong>Synonyms (ES):</strong> ${synsEs}<br>
-                    <strong>Synonyms (EN):</strong> ${synsEn}<br><br>
-                    <strong>Pitfall:</strong> ${item.pitfall_en}
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-    } catch (error) {
-        console.error("Error integrating FRASEO dictionary module:", error);
-    }
 }
 
 $('brandingToggle').onclick = () => $('brandingPanel').classList.toggle('open');
@@ -1110,7 +956,6 @@ async function init() {
             
             const selectElement = $('tagFilterSelect');
             const uniqueTags = [...new Set(Object.values(externalTags))];
-            
             uniqueTags.forEach(tag => {
                 if (tag) {
                     const option = document.createElement('option');
@@ -1129,9 +974,8 @@ async function init() {
         await addPlayer(BASE_URL+n+'_es.mp3', BASE_URL+n+'_es.json', 'es');
         await addPlayer(BASE_URL+'Z'+n+'_en.mp3', BASE_URL+'Z'+n+'_en.json', 'en');
     }
-    
-    await loadFraseoDictionary();
 }
+
 document.addEventListener('DOMContentLoaded', () => { init(); updateBranding(); });
 </script>
 
