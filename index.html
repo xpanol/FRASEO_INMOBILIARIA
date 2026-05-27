@@ -611,7 +611,8 @@ async function addPlayer(aUrl, jUrl, type) {
         data.forEach(l => {
             l.text.split(' ').forEach((w, j) => {
                 const s = document.createElement('span'); s.textContent = w + ' ';
-                const sT = l.start.split(':').reduce((a,t)=>60*a+ +t,0); const eT = l.end.split(':').reduce((a,t)=>60*a+ +t,0);
+              const sT = parseFloat(l.start);
+const eT = parseFloat(l.end);
                 const wD = (eT - sT) / l.text.split(' ').length;
                 s.dataset.start = (sT + j*wD).toFixed(2); s.dataset.end = (sT + (j+1)*wD).toFixed(2);
                 line.appendChild(s);
@@ -949,7 +950,7 @@ $('stopBtn').onclick = () => { isSeq = false; mainAudio.pause(); if(shaInterval)
 
 async function init() {
     try {
-        const tagsResponse = await fetch('https://raw.githubusercontent.com/xpanol/PLAYERS_INMOBILIARIA/refs/heads/main/data/inmobiliaria/tags.json');
+        const tagsResponse = await fetch('https://raw.githubusercontent.com/xpanol/PLAYERS_INMOBILIARIA/main/data/inmobiliaria/tags.json');
         if (tagsResponse.ok) {
             const externalTags = await tagsResponse.json();
             TRACK_TAGS = externalTags; 
